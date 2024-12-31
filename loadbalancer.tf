@@ -4,7 +4,7 @@ resource "aws_lb" "myloadbalancer" {
   load_balancer_type         = "application"
   security_groups            = [aws_security_group.allow_tls.id]
   subnets                    = [aws_subnet.public[0].id, aws_subnet.public[1].id]
-  enable_deletion_protection = true
+  enable_deletion_protection = false
 }
 
 resource "aws_lb_target_group" "grocery" {
